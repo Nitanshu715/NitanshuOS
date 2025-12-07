@@ -371,13 +371,11 @@ From here, you can SSH into it (if you expose ports) or continue experimenting w
 
 **Nitanshu Tak**  
 B.Tech CSE (Cloud Computing & Virtualization)  
-Cloud | DevOps | Linux | OS Internals | Rap on the side 🎧
+Cloud | DevOps | Linux | OS Internals | Machine Learning | Music on the side | Coffee in my blood streams |
 
-- GitHub: [@Nitanshu715](https://github.com/Nitanshu715)
+- LinkedIn: [Nitanshu Tak](https://www.linkedin.com/in/nitanshu-tak-89a1ba289/)
 - Project: [NitanshuOS](https://github.com/Nitanshu715/NitanshuOS)
 
-> If you’re a recruiter / senior engineer reading this:  
-> I didn’t just *install* Linux. I **built** one.
 
 ---
 
