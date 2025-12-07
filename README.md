@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="https://github.com/Nitanshu715/NitanshuOS/raw/main/NitanshuOS.PNG" alt="NitanshuOS Logo" width="220"/>
 </p>
@@ -354,6 +353,48 @@ qemu-system-x86_64 -m 256M -hda output/images/nitanshuos.raw -serial mon:stdio
 ```
 
 From here, you can SSH into it (if you expose ports) or continue experimenting with cloud import, different kernels, or extra packages.
+
+---
+
+## 🐳 Dockerized Build & Development Environment
+
+I ship NitanshuOS with a **fully containerized development environment** using Docker. This approach means anyone can experiment with the OS configurations, build the system, or test changes without needing to install Buildroot or any toolchains locally on their machine.
+
+This makes the entire project:
+
+* ✅ Fully **reproducible** across any environment.
+* ✅ **Platform-independent** and safe from host system conflicts.
+* ✅ A perfect fit for modern DevOps-style workflows and automated builds.
+
+### 🔧 Container Capabilities & Verified Toolchain
+
+Inside the development container, I have successfully verified and used all the necessary tools for the OS lifecycle:
+
+* ✅ GCC toolchain
+* ✅ QEMU emulator
+* ✅ GNU Make
+* ✅ Python 3
+* ✅ All Build dependencies required for OS compilation
+
+**Example checks inside the running container:**
+
+```bash
+gcc --version
+qemu-system-x86_64 --version
+make --version
+python3 --version
+# All of these ran successfully inside the NitanshuOS Docker environment.
+📦 My Docker Workflow
+I use the following simple steps to manage the development environment:
+
+Bash
+
+# Build the dev environment image from the Dockerfile
+docker build -t nitanshuos-env .
+
+# Run the container, mounting the local project directory into /workspace
+docker run -it --name nitanshuos-dev -v ~/NitanshuOS:/workspace nitanshuos-env
+Once inside the container, I can execute commands like tree -L 3 to immediately see the full, mounted project structure and begin work.
 
 ---
 
