@@ -385,26 +385,23 @@ make --version
 python3 --version
 ```
 
-# All of these ran successfully inside the NitanshuOS Docker environment.
-📦 My Docker Workflow
-I use the following simple steps to manage the development environment:
+# 📦 NitanshuOS Development Environment Workflow
 
-# Build the dev environment image from the Dockerfile
-docker build -t nitanshuos-env .
+## 🛠️ **Build** the Development Environment Image: `docker build -t nitanshuos-env .`
 
-# Run the container, mounting the local project directory into /workspace
-docker run -it --name nitanshuos-dev -v ~/NitanshuOS:/workspace nitanshuos-env
-Once inside the container, I can execute commands like tree -L 3 to immediately see the full, mounted project structure and begin work.
+This command constructs the Docker image named **nitanshuos-env** from the project's **Dockerfile** in the current directory (`.`). This image contains all the necessary dependencies and tools for development.
 
 ---
 
-## 🔮 Future Ideas
+## 🏃 **Run** the Development Container with Local Project Mounted: `docker run -it --name nitanshuos-dev -v ~/NitanshuOS:/workspace nitanshuos-env`
 
-- ✅ Finish AWS‑compatible AMI version (pass kernel validation)
-- ⬜ Add a small **web server** or demo app inside the OS
-- ⬜ Ship **pre-made QEMU run script**
-- ⬜ Add a **custom shell MOTD + color theme**
-- ⬜ Explore **container runtime** support on top of NitanshuOS
+This command performs several actions simultaneously:
+* **Runs** the container in **Interactive** and **TTY** modes (`-it`).
+* Assigns a user-friendly name, **nitanshuos-dev**, to the container (`--name`).
+* **Mounts** your local project directory (`~/NitanshuOS`) into the container's `/workspace` directory (`-v`). This allows you to edit files locally and execute/test them inside the consistent environment.
+* Uses the **nitanshuos-env** image.
+
+Once inside the container, you can immediately begin work and verify the mounted structure using a command like `tree -L 3`.
 
 ---
 
