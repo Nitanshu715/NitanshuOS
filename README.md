@@ -383,11 +383,11 @@ gcc --version
 qemu-system-x86_64 --version
 make --version
 python3 --version
+```
+
 # All of these ran successfully inside the NitanshuOS Docker environment.
 📦 My Docker Workflow
 I use the following simple steps to manage the development environment:
-
-Bash
 
 # Build the dev environment image from the Dockerfile
 docker build -t nitanshuos-env .
